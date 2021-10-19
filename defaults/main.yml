@@ -1,0 +1,10 @@
+---
+# Cache update time for apt module.
+cert_manager_cache_valid_time: 3600
+
+# cert_manger_version: v1.5.4
+
+cert_manager_chart_values:
+  # version: "{{ cert_manger_version }}"
+  installCRDs: true
+...

@@ -1,0 +1,8 @@
+---
+- name: Converge
+  hosts: cert-manager-test-control-plane
+  connection: docker
+  gather_facts: false
+  roles:
+    - role: racqspace.cert_manager
+...

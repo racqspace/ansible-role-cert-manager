@@ -1,0 +1,74 @@
+---
+- name: Install dependencies
+  ansible.builtin.apt:
+    name:
+      - python3-pip
+    state: present
+    update_cache: true
+    cache_valid_time: "{{ cert_manager_cache_valid_time }}"
+  tags:
+    - cert_manager
+    - cert_manager.dependencies
+
+- name: Install ansible dependencies
+  ansible.builtin.pip:
+    name:
+      - kubernetes
+      - openshift
+      - pyyaml
+  tags:
+    - cert_manager
+    - cert_manager.dependencies
+
+- name: Add helm key to apt
+  ansible.builtin.apt_key:
+    url: https://baltocdn.com/helm/signing.asc
+    state: present
+  notify: Update apt
+  tags:
+    - cert_manager
+    - cert_manager.dependencies
+
+- name: Add helm repo to apt
+  ansible.builtin.apt_repository:
+    repo: deb https://baltocdn.com/helm/stable/debian/ all main
+    state: present
+  notify: Update apt
+  tags:
+    - cert_manager
+    - cert_manager.dependencies
+
+- name: Force all notified handlers to run
+  meta: flush_handlers
+  tags:
+    - always
+
+- name: Install helm
+  ansible.builtin.apt:
+    name:
+      - helm
+    state: present
+  tags:
+    - cert_manager
+    - cert_manager.dependencies
+
+- name: Add jetstack chart repo
+  kubernetes.core.helm_repository:
+    name: jetstack
+    repo_url: "https://charts.jetstack.io"
+  tags:
+    - cert_manager
+    - cert_manager.repo
+
+- name: Deploy latest version of cert-manager
+  kubernetes.core.helm:
+    name: cert-manager
+    chart_ref: jetstack/cert-manager
+    release_namespace: cert-manager
+    create_namespace: true
+    update_repo_cache: true
+    values: "{{ cert_manager_chart_values | default( {} ) }}"
+  tags:
+    - cert_manager
+    - cert_manager.deploy
+...
