@@ -39,7 +39,7 @@
     - cert_manager.dependencies
 
 - name: Force all notified handlers to run
-  meta: flush_handlers
+  ansible.builtin.meta: flush_handlers
   tags:
     - always
 
