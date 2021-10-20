@@ -4,8 +4,8 @@
 
 Before you begin:
 - Have you read the [code of conduct](CODE_OF_CONDUCT.md)?
-- Check out the [existing issues](https://github.com/racqspace/ansible-role-cert_manager/issues) & see if we [accept contributions](#types-of-contributions-memo) for your type of issue.
-- Before you make your changes, check to see if an [issue exists](https://github.com/racqspace/ansible-role-cert_manager/issues/) already for the change you want to make.
+- Check out the [existing issues](https://github.com/racqspace/ansible-role-cert-manager/issues) & see if we [accept contributions](#types-of-contributions-memo) for your type of issue.
+- Before you make your changes, check to see if an [issue exists](https://github.com/racqspace/ansible-role-cert-manager/issues/) already for the change you want to make.
 
 ### Don't see your issue? Open one
 
@@ -41,7 +41,7 @@ When you're done making changes and you'd like to propose them for review open a
 ### Your PR is merged!
 Congratulations! The racqspace community thanks you. :sparkles:
 
-Once your PR is merged, you will be proudly listed as a contributor in the [contributor chart](https://github.com/racqspace/ansible-role-cert_manager/graphs/contributors).
+Once your PR is merged, you will be proudly listed as a contributor in the [contributor chart](https://github.com/racqspace/ansible-role-cert-manager/graphs/contributors).
 
 ### Keep contributing as you use the ansible role
 
@@ -65,7 +65,7 @@ You can contribute in several ways. This repo is a place to discuss and collabor
 ### :mega: Discussions
 Discussions are where we have conversations.
 
-If you'd like help troubleshooting a PR you're working on, have a great new idea, or want to share something amazing you've learned in our docs, join us in [discussions](https://github.com/racqspace/ansible-role-cert_manager/discussions).
+If you'd like help troubleshooting a PR you're working on, have a great new idea, or want to share something amazing you've learned in our docs, join us in [discussions](https://github.com/racqspace/ansible-role-cert-manager/discussions).
 
 ### :beetle: Issues
 [Issues](https://docs.github.com/en/github/managing-your-work-on-github/about-issues) are used to track tasks that contributors can help with. If an issue has a triage label, we haven't reviewed it yet and you shouldn't begin work on it.
