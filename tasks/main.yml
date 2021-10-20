@@ -71,4 +71,16 @@
   tags:
     - cert_manager
     - cert_manager.deploy
+
+- name: Deploy CRDs
+  kubernetes.core.k8s:
+    state: present
+    definition: "{{ cert_manager_crd }}"
+  with_items: "{{ cert_manager_crds }}"
+  loop_control:
+    loop_var: cert_manager_crd
+    label: "{{ cert_manager_crd.kind }}"
+  tags:
+    - cert_manager
+    - cert_manager.crd
 ...
